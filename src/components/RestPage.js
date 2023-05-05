@@ -1,0 +1,11 @@
+const RestPage = (props) => {
+
+    return(<>
+        
+    
+    
+    
+    
+    
+    </>)
+}

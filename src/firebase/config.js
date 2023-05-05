@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,5 +14,21 @@ const firebaseConfig = {
 };
 
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+const app = firebase.initializeApp(firebaseConfig);
+//const analytics = getAnalytics(app);
+
+export const auth = firebase.auth();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+
+export const signInWithGoogle = () => {
+    auth.signInWithPopup(provider).then((result) => {
+        const user = result.user;
+        localStorage.setItem('user', user)
+    })
+    console.log(auth.currentUser);
+    
+};
+
+export default firebase;
