@@ -21,7 +21,7 @@ const Navigation = ({props}) => {
           <ul className="inline-flex">
             <li><a className="px-4 font-bold" href="/">Home</a></li>
             <li><a className="px-4 hover:text-gray-800" href="restaurants">Restaurants</a></li>
-            <li>{props ?   <button classNameName="signout" onClick={() => {
+            <li>{props ?   <button className="signout" onClick={() => {
                   auth.signOut();
                   localStorage.setItem('user', null);
                 }

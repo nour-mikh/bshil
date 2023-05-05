@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,8 +29,8 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-.signout{
-
+body{
+  font-family: 'Montserrat', !important;
 }
 
 #navbar{
@@ -72,18 +75,7 @@ body {
   height: 30vw;
 }
 
-#recomRest{
-  display: flex;
-  flex-direction: column;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-color: black;
-  border-style: solid;
-  align-items: center;
-  justify-content: center;
-  background-color: antiquewhite;
-  padding: 1%;
-}
+
 
 #recomRest:hover{
   transform: scale(1.07);

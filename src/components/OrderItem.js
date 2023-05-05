@@ -11,15 +11,10 @@ export const Item = (props) => {
           <div className="my-4">{props.title}</div>
           <span className="bg-gray-700 h-0.5 w-64 rounded-md"></span>
           <div className="my-4">{props.description}</div>
-          <div className='my-4'> {props.price}</div>
+          <div className='my-4'> ${props.price}</div>
         </div>
-        <button className="btn w-32 h-8 items-center content-center rounded-xl m-16 bg-gray-400 hover:bg-gray-500" onClick={ () => {
-          let flag = new Date();
-          localStorage.setItem(flag, props.title + " " + props.price)
-          alert("Added " + props.title + " for " + props.price)
-          console.log(localStorage.getItem(flag));
-        } }  >
-          Add to Cart
+        <button className="btn w-32 h-8 items-center content-center rounded-xl text-white m-16 bg-gray-400 hover:bg-gray-500" >
+          By {props.user}
         </button>
       </div>
     </div>
